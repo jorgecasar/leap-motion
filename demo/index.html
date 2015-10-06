@@ -1,0 +1,96 @@
+<!doctype html>
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+    <title>leap-motion Demo</title>
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="../leap-motion.html">
+    <link rel="import" href="../leap-motion-hand.html">
+  </head>
+  <body unresolved>
+
+    <template is="dom-bind">
+      <ul>
+        <li>
+          <label>
+            <input type="checkbox" disabled checked$="[[connected]]"/>
+            Connected
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="checkbox" disabled checked$="[[isFocus]]"/>
+            Focus
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="checkbox" disabled checked$="[[isDeviceAttached]]"/>
+            Device attached
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="checkbox" disabled checked$="[[isDeviceConnected]]"/>
+            Device connected
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="checkbox" disabled checked$="[[isDeviceStreaming]]"/>
+            Device streaming
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="checkbox" disabled checked$="[[streaming]]"/>
+            Streaming
+          </label>
+        </li>
+        <li>
+            Gesture (<span>{{gesture.state}}</span>)
+            <pre>{{gesture}}</pre>
+        </li>
+      </ul>
+      <leap-motion
+        auto
+        enable-gestures
+        last-frame="{{frame}}"
+        last-gesture="{{gesture}}"
+        connected="{{connected}}"
+        streaming="{{streaming}}"
+        is-device-attached="{{isDeviceAttached}}"
+        is-device-connected="{{isDeviceConnected}}"
+        is-device-streaming="{{isDeviceStreaming}}"
+        is-focus="{{isFocus}}"
+        >
+        <template is="dom-repeat" items="{{frame.hands}}" as="hand">
+          <leap-motion-hand hand="{{hand}}" confidence="{{confidence}}" type="{{type}}">
+            <p>{{confidence}}</p>
+            <p>{{type}}</p>
+          </leap-motion-hand>
+        </template>
+      </leap-motion>
+
+    </template>
+    <script>
+      var frame = {
+        hands: [{
+          confidence: 0.23412,
+          type: 'right'
+        }]
+      };
+    </script>
+
+  </body>
+</html>
