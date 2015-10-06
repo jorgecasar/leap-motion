@@ -1,11 +1,16 @@
-/* global Polymer */
-/* global Leap */
+/* global Polymer, Leap */
+'use strict';
+
 /** 
- * An element to config Leap Motion.
+ * An element providing a wrapper for Leap Motion.
  * 
  * Example:
  * 
- *     <leap-motion></leap-motion>
+ *      <leap-motion
+ *        auto
+ *        enable-gestures
+ *        last-frame="{{frame}}">
+ *      </leap-motion>
  * 
  * @group LeapMotion Elements
  * @element leap-motion
