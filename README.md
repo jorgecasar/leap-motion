@@ -1,7 +1,8 @@
 # leap-motion
 
-An element providing a wrapper for Leap Motion.
+An element providing a wrapper for Leap Motion JavaScript SDK.
 
+Oficial Leap Motion [JavaScript SDK Documentation](https://developer.leapmotion.com/documentation/javascript/index.html)
 
 ## Dependencies
 
