@@ -72,25 +72,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         is-device-attached="{{isDeviceAttached}}"
         is-device-connected="{{isDeviceConnected}}"
         is-device-streaming="{{isDeviceStreaming}}"
-        is-focus="{{isFocus}}"
-        >
+        is-focus="{{isFocus}}">
         <template is="dom-repeat" items="{{frame.hands}}" as="hand">
-          <leap-motion-hand hand="{{hand}}" confidence="{{confidence}}" type="{{type}}">
-            <p>{{confidence}}</p>
-            <p>{{type}}</p>
-          </leap-motion-hand>
+          <p>{{hand.confidence}}</p>
+          <p>{{hand.type}}</p>
         </template>
       </leap-motion>
-
     </template>
-    <script>
-      var frame = {
-        hands: [{
-          confidence: 0.23412,
-          type: 'right'
-        }]
-      };
-    </script>
 
   </body>
 </html>
