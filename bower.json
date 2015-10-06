@@ -1,0 +1,31 @@
+{
+  "name": "leap-motion",
+  "version": "1.0.1",
+  "authors": [
+    "Anonymous <anonymous@example.com>"
+  ],
+  "description": "An element providing a solution to no problem in particular.",
+  "keywords": [
+    "web-component",
+    "polymer",
+    "seed"
+  ],
+  "main": [
+   "leap-motion.html",
+   "leap-motion-hand.html" 
+  ],
+  "license": "http://polymer.github.io/LICENSE.txt",
+  "homepage": "https://github.com/<USERNAME>/seed-element/",
+  "ignore": [
+    "/.*",
+    "/test/"
+  ],
+  "dependencies": {
+    "leapjs": "~0.6.4",
+    "polymer": "Polymer/polymer#^1.0.0"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
+    "web-component-tester": "*"
+  }
+}
